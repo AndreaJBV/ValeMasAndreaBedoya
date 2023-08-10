@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center">
+    <h1 class="display-3">Detalle de Usuarios</h1>
+</div>
+<div>
+    <div>
+        <p><strong>Nombre:</strong> {{user.name}}</p>
+        <p><strong>Teléfono::</strong> {{user.phone}}</p>
+        <p><strong>Email:</strong> {{user.email}}</p>
+        <p><strong>Ciudad:</strong> {{user.address.city}}</p>
+        <p><strong>Página web:</strong> {{user.website}}</p>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <h1 class="display-3">Publicaciones de usuario</h1>
+</div>
+<div class="container mt-4">
+    <div >
+        <ul class="list-group">
+            <li *ngFor="let post of userPosts" class="list-group-item">
+                <h5>{{post.title}}</h5>
+                <p>{{post.body}}</p>
+                <h6>Comentarios:</h6>
+                <ul>
+                    <li *ngFor="let comment of post.comments">
+                        <h6>Nombre:</h6> <p>{{comment.name}}</p>
+                        <h6>Email:</h6> <p>{{comment.email}}</p>
+                        <h6>Comentario:</h6> <p>{{comment.body}}</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

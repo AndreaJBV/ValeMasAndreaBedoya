@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center">
+    <h1 class="display-3">Lista de álbumes</h1>
+</div>
+<div class="container mt-4">
+    <ul class="list-group"> 
+        <li *ngFor="let album of albums" class="list-group-item">
+            <h5>{{album.title}}</h5>
+            <img [src]="album.thumbnailUrl" class="img-thumbnail">
+            <button class="btn btn-warning" (click)="openAlbumDetailDialog(album.id)">Ver detalles</button>
+        </li>
+    </ul>
+</div>
